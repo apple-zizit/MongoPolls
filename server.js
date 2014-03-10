@@ -47,9 +47,13 @@ require('./lib/routes')(app);
 //avner: should better be in the route
  io.sockets.on('connection', api.vote);
 
- // Start server
-app.listen(config.port, function () {
-  console.log('Express server listening on port %d in %s mode', config.port, app.get('env'));
+//  // Start server
+// app.listen(config.port, function () {
+//   console.log('Express server listening on port %d in %s mode', config.port, app.get('env'));
+// });
+
+server.listen(config.port, function () {
+  console.log('Express server running on http://localhost:%d in %s mode', config.port, app.get('env'));
 });
 
 // Expose app
